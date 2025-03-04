@@ -16,6 +16,11 @@ def generate_primes(n):
     return primes
 
 if __name__ == "__main__":
-    n = int(input("Enter the number of primes to generate: "))
-    print(f"First {n} prime numbers: {generate_primes(n)}")
-    
+    import sys
+
+if len(sys.argv) > 1:
+    n = int(sys.argv[1])  # Read the first command-line argument
+else:
+    n = 10  # Default value if no input is provided
+
+print(f"First {n} prime numbers: {generate_primes(n)}")
